@@ -31,7 +31,6 @@ class Trainer:
 
     def __init__(self, config_path: str) -> None:
         self.cfg = load_config(config_path)
-
         self.dtype = tf.float64 if self.cfg.model.dtype == "float64" else tf.float32
 
         ensure_directories(
@@ -86,51 +85,50 @@ class Trainer:
 
         raise TrainingError(f"Unsupported model_type: {self.cfg.model.model_type}")
 
-@tf.function
-def train_step(
-    self,
-    x_train: tf.Tensor,
-    y_train: tf.Tensor,
-    t_train: tf.Tensor,
-    u_train: tf.Tensor,
-    v_train: tf.Tensor,
-    x_res: tf.Tensor,
-    y_res: tf.Tensor,
-    t_res: tf.Tensor,
-    x_test: tf.Tensor,
-    y_test: tf.Tensor,
-    t_test: tf.Tensor,
-    u_test: tf.Tensor,
-    v_test: tf.Tensor,
-):
-    with tf.GradientTape() as tape:
-        result = self.model.compute_losses(
-            x_train=x_train,
-            y_train=y_train,
-            t_train=t_train,
-            u_train=u_train,
-            v_train=v_train,
-            x_res=x_res,
-            y_res=y_res,
-            t_res=t_res,
-            x_test=x_test,
-            y_test=y_test,
-            t_test=t_test,
-            u_test=u_test,
-            v_test=v_test,
+    @tf.function
+    def train_step(
+        self,
+        x_train: tf.Tensor,
+        y_train: tf.Tensor,
+        t_train: tf.Tensor,
+        u_train: tf.Tensor,
+        v_train: tf.Tensor,
+        x_res: tf.Tensor,
+        y_res: tf.Tensor,
+        t_res: tf.Tensor,
+        x_test: tf.Tensor,
+        y_test: tf.Tensor,
+        t_test: tf.Tensor,
+        u_test: tf.Tensor,
+        v_test: tf.Tensor,
+    ):
+        with tf.GradientTape() as tape:
+            result = self.model.compute_losses(
+                x_train=x_train,
+                y_train=y_train,
+                t_train=t_train,
+                u_train=u_train,
+                v_train=v_train,
+                x_res=x_res,
+                y_res=y_res,
+                t_res=t_res,
+                x_test=x_test,
+                y_test=y_test,
+                t_test=t_test,
+                u_test=u_test,
+                v_test=v_test,
+            )
+
+        gradients = tape.gradient(result.loss, self.model.trainable_variables)
+        self.optimizer.apply_gradients(zip(gradients, self.model.trainable_variables))
+
+        return (
+            result.loss,
+            result.loss_data,
+            result.loss_res,
+            result.loss_test,
+            result.loss_reg,
         )
-
-    gradients = tape.gradient(result.loss, self.model.trainable_variables)
-    self.optimizer.apply_gradients(zip(gradients, self.model.trainable_variables))
-
-    # Return only tensors / nested tensors
-    return (
-        result.loss,
-        result.loss_data,
-        result.loss_res,
-        result.loss_test,
-        result.loss_reg,
-    )
 
     @log_exceptions
     @timed
@@ -238,7 +236,6 @@ def train_step(
     def _save_checkpoint(self, checkpoint_path: str) -> None:
         """
         Save model weights/biases/frequencies into an HDF5 file.
-        This keeps the implementation simple and portable.
         """
         out_path = Path(checkpoint_path)
         out_path.parent.mkdir(parents=True, exist_ok=True)
