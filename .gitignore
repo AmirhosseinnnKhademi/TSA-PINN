@@ -16,9 +16,6 @@ checkpoints/*.keras
 checkpoints/*.ckpt
 checkpoints/*.pb
 
-# local data
-data/*.mat
-
 # OS files
 .DS_Store
 
