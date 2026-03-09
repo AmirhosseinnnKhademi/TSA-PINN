@@ -1,14 +1,40 @@
 # TSA-PINN
 
-A modular TensorFlow implementation of Physics-Informed Neural Networks (PINNs) intergated with a novel  "Trainable Sinusoidal Activation" applicable to PDEs such as Navier-Stokes equations.
+A modular TensorFlow implementation of **Physics-Informed Neural Networks (PINNs)** with **Trainable Sinusoidal Activation (TSA)** for solving nonlinear PDEs such as the **Navier–Stokes equations**.
 
-Please review my work published in the Elsevier's journal of computer physics communications:
+This repository reproduces and demonstrates the **TSA-PINN architecture** proposed in our research for improving convergence and accuracy in physics-informed deep learning models.
 
+---
+
+## 📄 Associated Publication
+
+Please review the research paper published in **Elsevier – Computer Physics Communications**:
+
+Paper:  
 https://www.sciencedirect.com/science/article/pii/S0010465525001742
 
-DOI: https://doi.org/10.1016/j.cpc.2025.109672
+DOI:  
+https://doi.org/10.1016/j.cpc.2025.109672
 
-## Repository Structure
+If you use this work, please cite the paper.
+
+---
+
+# Overview
+
+Physics-Informed Neural Networks (PINNs) incorporate physical laws (PDEs) directly into the loss function of neural networks. However, standard PINNs may suffer from:
+
+- slow convergence
+- spectral bias
+- difficulty capturing high-frequency dynamics
+
+To address these challenges, we propose **TSA-PINN**, which introduces **trainable sinusoidal activations** into the neural network architecture.
+
+This allows the model to **adaptively learn relevant frequency components** of the solution.
+
+---
+
+# Project Structure
 
 ```text
 TSA-PINN/
