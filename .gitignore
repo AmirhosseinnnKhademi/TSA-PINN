@@ -21,3 +21,6 @@ data/*.mat
 
 # OS files
 .DS_Store
+
+# dataset
+data/*.mat
