@@ -1,7 +1,7 @@
 seed: 42
 
 paths:
-  data_file: "cylinder_nektar_wake.mat"
+  data_file: "data/cylinder_nektar_wake.mat"
   outputs_dir: "outputs/tsa_sigma_0_1"
   checkpoints_dir: "checkpoints/tsa_sigma_0_1"
 
