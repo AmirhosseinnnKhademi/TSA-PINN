@@ -1,7 +1,3 @@
-This is a Python Implementation of a novel Physics-Informed Neural Network model, called "TSA-PINN". This technique equipes classic PINN with Trainable Sinusoidal Activation functions, theorized and developed by my team.
-
-
-
 # TSA-PINN
 
 A modular TensorFlow implementation of Physics-Informed Neural Networks (PINNs) intergated with a novel  "Trainable Sinusoidal Activation" applicable to PDEs such as Navier-Stokes equations.
