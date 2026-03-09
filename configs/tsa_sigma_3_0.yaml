@@ -1,0 +1,24 @@
+seed: 42
+
+paths:
+  data_file: "cylinder_nektar_wake.mat"
+  outputs_dir: "outputs/tsa_sigma_3_0"
+  checkpoints_dir: "checkpoints/tsa_sigma_3_0"
+
+training:
+  epochs: 4001
+  learning_rate: 0.005
+  n_train_residuals: 1200
+  n_train_bcs: 1200
+  n_train_bcs_used: 1000
+  eval_every: 100
+  snapshot_index: 100
+  x_probe: 2.0
+  y_probe: 0.0
+
+model:
+  model_type: "tsa"
+  layers: [3, 50, 50, 50, 2]
+  dtype: "float64"
+  reynolds: 100.0
+  initial_frequency: 3.0
