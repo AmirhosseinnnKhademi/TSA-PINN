@@ -1,0 +1,24 @@
+{
+  "model_name": "StandardPINN",
+  "model_type": "standard",
+  "layers": [
+    3,
+    50,
+    50,
+    50,
+    2
+  ],
+  "reynolds": 100.0,
+  "dtype": "float64",
+  "epochs": 4001,
+  "learning_rate": 0.005,
+  "n_train_residuals": 1200,
+  "n_train_bcs": 1200,
+  "n_train_bcs_used": 1000,
+  "final_loss": 0.10221611240108122,
+  "final_loss_data": 0.07917042342218833,
+  "final_loss_res": 0.02304568897889289,
+  "final_loss_test": 0.25555695285495483,
+  "final_loss_reg": 0.0,
+  "checkpoint_path": "checkpoints/standard/StandardPINN.weights.h5"
+}

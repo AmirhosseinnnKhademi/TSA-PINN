@@ -1,0 +1,14 @@
+2026-03-09 23:13:58 | INFO | tsa_pinn | Rebuilt TSAPINN for evaluation with initial_frequency=0.1000.
+2026-03-09 23:13:58 | INFO | tsa_pinn | Loaded checkpoint from checkpoints/tsa_sigma_0_1/TSAPINN.weights.h5
+2026-03-09 23:13:58 | INFO | tsa_pinn | Loaded dataset from data/cylinder_nektar_wake.mat
+2026-03-09 23:13:58 | INFO | tsa_pinn | Spatial points: 5000 | Time steps: 200 | Total samples: 1000000
+2026-03-09 23:13:58 | INFO | tsa_pinn | Function 'load' finished in 0.053 s
+2026-03-09 23:13:59 | INFO | tsa_pinn | Snapshot 100 evaluation | rel L2 error u = 2.566387e-02 | rel L2 error v = 5.845454e-02
+2026-03-09 23:14:02 | INFO | tsa_pinn | Saved snapshot comparison plot to outputs/tsa_sigma_0_1/snapshot_comparison.png
+2026-03-09 23:14:02 | INFO | tsa_pinn | Function 'evaluate_snapshot' finished in 4.267 s
+2026-03-09 23:14:02 | INFO | tsa_pinn | Loaded dataset from data/cylinder_nektar_wake.mat
+2026-03-09 23:14:02 | INFO | tsa_pinn | Spatial points: 5000 | Time steps: 200 | Total samples: 1000000
+2026-03-09 23:14:02 | INFO | tsa_pinn | Function 'load' finished in 0.042 s
+2026-03-09 23:14:02 | INFO | tsa_pinn | Probe evaluation at (2.000, 0.000) | rel L2 error u = 2.704842e-01 | rel L2 error v = 6.623545e-02
+2026-03-09 23:14:03 | INFO | tsa_pinn | Saved probe plots to outputs/tsa_sigma_0_1/probe_u_vs_time.png and outputs/tsa_sigma_0_1/probe_v_vs_time.png
+2026-03-09 23:14:03 | INFO | tsa_pinn | Function 'evaluate_probe' finished in 1.378 s

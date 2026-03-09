@@ -1,0 +1,54 @@
+2026-03-09 22:53:23 | INFO | tsa_pinn | Loaded configuration from configs/standard.yaml
+2026-03-09 22:53:23 | INFO | tsa_pinn | Configuration: {'seed': 42, 'paths': {'data_file': 'data/cylinder_nektar_wake.mat', 'outputs_dir': 'outputs/standard', 'checkpoints_dir': 'checkpoints/standard'}, 'training': {'epochs': 4001, 'learning_rate': 0.005, 'n_train_residuals': 1200, 'n_train_bcs': 1200, 'n_train_bcs_used': 1000, 'eval_every': 100, 'snapshot_index': 100, 'x_probe': 2.0, 'y_probe': 0.0}, 'model': {'model_type': 'standard', 'layers': [3, 50, 50, 50, 2], 'dtype': 'float64', 'reynolds': 100.0, 'initial_frequency': None}}
+2026-03-09 22:53:24 | INFO | tsa_pinn | Initialized StandardPINN.
+2026-03-09 22:53:24 | INFO | tsa_pinn | Loaded dataset from data/cylinder_nektar_wake.mat
+2026-03-09 22:53:24 | INFO | tsa_pinn | Spatial points: 5000 | Time steps: 200 | Total samples: 1000000
+2026-03-09 22:53:24 | INFO | tsa_pinn | Function 'load' finished in 0.043 s
+2026-03-09 22:53:24 | INFO | tsa_pinn | Sampled 1200 residual points, 1200 BC/data points (1000 used for training, 200 held out for test).
+2026-03-09 22:53:35 | INFO | tsa_pinn | Epoch 0 | total=7.188368e-01 | data=7.093873e-01 | residual=9.449460e-03 | test=6.745474e-01 | reg=0.000000e+00
+2026-03-09 22:53:39 | INFO | tsa_pinn | Epoch 100 | total=2.699798e-01 | data=2.677738e-01 | residual=2.206001e-03 | test=2.601794e-01 | reg=0.000000e+00
+2026-03-09 22:53:42 | INFO | tsa_pinn | Epoch 200 | total=2.338890e-01 | data=2.275173e-01 | residual=6.371658e-03 | test=2.389625e-01 | reg=0.000000e+00
+2026-03-09 22:53:46 | INFO | tsa_pinn | Epoch 300 | total=2.124951e-01 | data=2.021975e-01 | residual=1.029759e-02 | test=2.206409e-01 | reg=0.000000e+00
+2026-03-09 22:53:50 | INFO | tsa_pinn | Epoch 400 | total=1.995059e-01 | data=1.881337e-01 | residual=1.137219e-02 | test=2.133069e-01 | reg=0.000000e+00
+2026-03-09 22:53:54 | INFO | tsa_pinn | Epoch 500 | total=1.920817e-01 | data=1.789251e-01 | residual=1.315657e-02 | test=2.074368e-01 | reg=0.000000e+00
+2026-03-09 22:53:57 | INFO | tsa_pinn | Epoch 600 | total=1.866268e-01 | data=1.722331e-01 | residual=1.439370e-02 | test=2.029139e-01 | reg=0.000000e+00
+2026-03-09 22:54:01 | INFO | tsa_pinn | Epoch 700 | total=1.812097e-01 | data=1.660582e-01 | residual=1.515151e-02 | test=1.946070e-01 | reg=0.000000e+00
+2026-03-09 22:54:05 | INFO | tsa_pinn | Epoch 800 | total=1.722153e-01 | data=1.559263e-01 | residual=1.628897e-02 | test=1.881531e-01 | reg=0.000000e+00
+2026-03-09 22:54:09 | INFO | tsa_pinn | Epoch 900 | total=1.701814e-01 | data=1.519513e-01 | residual=1.823007e-02 | test=1.849310e-01 | reg=0.000000e+00
+2026-03-09 22:54:12 | INFO | tsa_pinn | Epoch 1000 | total=1.621275e-01 | data=1.440920e-01 | residual=1.803553e-02 | test=1.824294e-01 | reg=0.000000e+00
+2026-03-09 22:54:16 | INFO | tsa_pinn | Epoch 1100 | total=1.596354e-01 | data=1.409593e-01 | residual=1.867605e-02 | test=1.845178e-01 | reg=0.000000e+00
+2026-03-09 22:54:20 | INFO | tsa_pinn | Epoch 1200 | total=1.541694e-01 | data=1.343229e-01 | residual=1.984657e-02 | test=1.849436e-01 | reg=0.000000e+00
+2026-03-09 22:54:24 | INFO | tsa_pinn | Epoch 1300 | total=1.501459e-01 | data=1.311096e-01 | residual=1.903628e-02 | test=1.850594e-01 | reg=0.000000e+00
+2026-03-09 22:54:27 | INFO | tsa_pinn | Epoch 1400 | total=1.466859e-01 | data=1.261578e-01 | residual=2.052810e-02 | test=1.852086e-01 | reg=0.000000e+00
+2026-03-09 22:54:31 | INFO | tsa_pinn | Epoch 1500 | total=1.444957e-01 | data=1.225284e-01 | residual=2.196726e-02 | test=1.860702e-01 | reg=0.000000e+00
+2026-03-09 22:54:35 | INFO | tsa_pinn | Epoch 1600 | total=1.470483e-01 | data=1.219907e-01 | residual=2.505754e-02 | test=1.906391e-01 | reg=0.000000e+00
+2026-03-09 22:54:39 | INFO | tsa_pinn | Epoch 1700 | total=1.405158e-01 | data=1.202085e-01 | residual=2.030733e-02 | test=1.928612e-01 | reg=0.000000e+00
+2026-03-09 22:54:42 | INFO | tsa_pinn | Epoch 1800 | total=1.327696e-01 | data=1.124028e-01 | residual=2.036676e-02 | test=1.938027e-01 | reg=0.000000e+00
+2026-03-09 22:54:46 | INFO | tsa_pinn | Epoch 1900 | total=1.418833e-01 | data=1.216321e-01 | residual=2.025114e-02 | test=1.999200e-01 | reg=0.000000e+00
+2026-03-09 22:54:50 | INFO | tsa_pinn | Epoch 2000 | total=1.288696e-01 | data=1.079330e-01 | residual=2.093655e-02 | test=1.986108e-01 | reg=0.000000e+00
+2026-03-09 22:54:54 | INFO | tsa_pinn | Epoch 2100 | total=1.290184e-01 | data=1.089951e-01 | residual=2.002328e-02 | test=2.003306e-01 | reg=0.000000e+00
+2026-03-09 22:54:57 | INFO | tsa_pinn | Epoch 2200 | total=1.247510e-01 | data=1.031395e-01 | residual=2.161152e-02 | test=2.005278e-01 | reg=0.000000e+00
+2026-03-09 22:55:01 | INFO | tsa_pinn | Epoch 2300 | total=1.246626e-01 | data=1.016626e-01 | residual=2.300006e-02 | test=2.038086e-01 | reg=0.000000e+00
+2026-03-09 22:55:05 | INFO | tsa_pinn | Epoch 2400 | total=1.252310e-01 | data=1.015453e-01 | residual=2.368565e-02 | test=2.078360e-01 | reg=0.000000e+00
+2026-03-09 22:55:09 | INFO | tsa_pinn | Epoch 2500 | total=1.184018e-01 | data=9.652522e-02 | residual=2.187654e-02 | test=2.077410e-01 | reg=0.000000e+00
+2026-03-09 22:55:12 | INFO | tsa_pinn | Epoch 2600 | total=1.137361e-01 | data=9.278048e-02 | residual=2.095563e-02 | test=2.110956e-01 | reg=0.000000e+00
+2026-03-09 22:55:16 | INFO | tsa_pinn | Epoch 2700 | total=1.183682e-01 | data=9.638319e-02 | residual=2.198500e-02 | test=2.181448e-01 | reg=0.000000e+00
+2026-03-09 22:55:20 | INFO | tsa_pinn | Epoch 2800 | total=1.137360e-01 | data=9.061686e-02 | residual=2.311912e-02 | test=2.182278e-01 | reg=0.000000e+00
+2026-03-09 22:55:24 | INFO | tsa_pinn | Epoch 2900 | total=1.127989e-01 | data=9.129564e-02 | residual=2.150326e-02 | test=2.205141e-01 | reg=0.000000e+00
+2026-03-09 22:55:27 | INFO | tsa_pinn | Epoch 3000 | total=1.178848e-01 | data=9.119103e-02 | residual=2.669375e-02 | test=2.185015e-01 | reg=0.000000e+00
+2026-03-09 22:55:31 | INFO | tsa_pinn | Epoch 3100 | total=1.058786e-01 | data=8.544106e-02 | residual=2.043753e-02 | test=2.246466e-01 | reg=0.000000e+00
+2026-03-09 22:55:35 | INFO | tsa_pinn | Epoch 3200 | total=1.078893e-01 | data=8.533817e-02 | residual=2.255110e-02 | test=2.255382e-01 | reg=0.000000e+00
+2026-03-09 22:55:39 | INFO | tsa_pinn | Epoch 3300 | total=1.026205e-01 | data=7.994047e-02 | residual=2.268004e-02 | test=2.290989e-01 | reg=0.000000e+00
+2026-03-09 22:55:42 | INFO | tsa_pinn | Epoch 3400 | total=1.031889e-01 | data=8.080966e-02 | residual=2.237921e-02 | test=2.346616e-01 | reg=0.000000e+00
+2026-03-09 22:55:46 | INFO | tsa_pinn | Epoch 3500 | total=1.001144e-01 | data=7.686543e-02 | residual=2.324897e-02 | test=2.388002e-01 | reg=0.000000e+00
+2026-03-09 22:55:50 | INFO | tsa_pinn | Epoch 3600 | total=9.385025e-02 | data=7.299881e-02 | residual=2.085144e-02 | test=2.397696e-01 | reg=0.000000e+00
+2026-03-09 22:55:54 | INFO | tsa_pinn | Epoch 3700 | total=9.616277e-02 | data=7.264395e-02 | residual=2.351882e-02 | test=2.435006e-01 | reg=0.000000e+00
+2026-03-09 22:55:57 | INFO | tsa_pinn | Epoch 3800 | total=9.018029e-02 | data=7.095110e-02 | residual=1.922920e-02 | test=2.455127e-01 | reg=0.000000e+00
+2026-03-09 22:56:01 | INFO | tsa_pinn | Epoch 3900 | total=9.186254e-02 | data=7.103646e-02 | residual=2.082608e-02 | test=2.495759e-01 | reg=0.000000e+00
+2026-03-09 22:56:05 | INFO | tsa_pinn | Epoch 4000 | total=1.022161e-01 | data=7.917042e-02 | residual=2.304569e-02 | test=2.555570e-01 | reg=0.000000e+00
+2026-03-09 22:56:06 | INFO | tsa_pinn | Training completed successfully.
+2026-03-09 22:56:06 | INFO | tsa_pinn | Saved history to outputs/standard/history.csv
+2026-03-09 22:56:06 | INFO | tsa_pinn | Saved metrics to outputs/standard/metrics.json
+2026-03-09 22:56:06 | INFO | tsa_pinn | Saved loss plot to outputs/standard/loss_curve.png
+2026-03-09 22:56:06 | INFO | tsa_pinn | Saved checkpoint to checkpoints/standard/StandardPINN.weights.h5
+2026-03-09 22:56:06 | INFO | tsa_pinn | Function 'run' finished in 161.761 s
