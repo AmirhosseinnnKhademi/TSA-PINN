@@ -86,44 +86,51 @@ class Trainer:
 
         raise TrainingError(f"Unsupported model_type: {self.cfg.model.model_type}")
 
-    @tf.function
-    def train_step(
-        self,
-        x_train: tf.Tensor,
-        y_train: tf.Tensor,
-        t_train: tf.Tensor,
-        u_train: tf.Tensor,
-        v_train: tf.Tensor,
-        x_res: tf.Tensor,
-        y_res: tf.Tensor,
-        t_res: tf.Tensor,
-        x_test: tf.Tensor,
-        y_test: tf.Tensor,
-        t_test: tf.Tensor,
-        u_test: tf.Tensor,
-        v_test: tf.Tensor,
-    ):
-        with tf.GradientTape() as tape:
-            result = self.model.compute_losses(
-                x_train=x_train,
-                y_train=y_train,
-                t_train=t_train,
-                u_train=u_train,
-                v_train=v_train,
-                x_res=x_res,
-                y_res=y_res,
-                t_res=t_res,
-                x_test=x_test,
-                y_test=y_test,
-                t_test=t_test,
-                u_test=u_test,
-                v_test=v_test,
-            )
+@tf.function
+def train_step(
+    self,
+    x_train: tf.Tensor,
+    y_train: tf.Tensor,
+    t_train: tf.Tensor,
+    u_train: tf.Tensor,
+    v_train: tf.Tensor,
+    x_res: tf.Tensor,
+    y_res: tf.Tensor,
+    t_res: tf.Tensor,
+    x_test: tf.Tensor,
+    y_test: tf.Tensor,
+    t_test: tf.Tensor,
+    u_test: tf.Tensor,
+    v_test: tf.Tensor,
+):
+    with tf.GradientTape() as tape:
+        result = self.model.compute_losses(
+            x_train=x_train,
+            y_train=y_train,
+            t_train=t_train,
+            u_train=u_train,
+            v_train=v_train,
+            x_res=x_res,
+            y_res=y_res,
+            t_res=t_res,
+            x_test=x_test,
+            y_test=y_test,
+            t_test=t_test,
+            u_test=u_test,
+            v_test=v_test,
+        )
 
-        gradients = tape.gradient(result.loss, self.model.trainable_variables)
-        self.optimizer.apply_gradients(zip(gradients, self.model.trainable_variables))
+    gradients = tape.gradient(result.loss, self.model.trainable_variables)
+    self.optimizer.apply_gradients(zip(gradients, self.model.trainable_variables))
 
-        return result
+    # Return only tensors / nested tensors
+    return (
+        result.loss,
+        result.loss_data,
+        result.loss_res,
+        result.loss_test,
+        result.loss_reg,
+    )
 
     @log_exceptions
     @timed
@@ -140,7 +147,7 @@ class Trainer:
         history_rows: list[dict] = []
 
         for epoch in range(self.cfg.training.epochs):
-            result = self.train_step(
+            loss, loss_data, loss_res, loss_test, loss_reg = self.train_step(
                 x_train=sampled["x_train"],
                 y_train=sampled["y_train"],
                 t_train=sampled["t_train"],
@@ -159,11 +166,11 @@ class Trainer:
             if epoch % self.cfg.training.eval_every == 0 or epoch == self.cfg.training.epochs - 1:
                 row = {
                     "epoch": epoch,
-                    "loss": float(result.loss.numpy()),
-                    "loss_data": float(result.loss_data.numpy()),
-                    "loss_res": float(result.loss_res.numpy()),
-                    "loss_test": float(result.loss_test.numpy()),
-                    "loss_reg": float(result.loss_reg.numpy()),
+                    "loss": float(loss.numpy()),
+                    "loss_data": float(loss_data.numpy()),
+                    "loss_res": float(loss_res.numpy()),
+                    "loss_test": float(loss_test.numpy()),
+                    "loss_reg": float(loss_reg.numpy()),
                 }
                 history_rows.append(row)
 
