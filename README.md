@@ -45,8 +45,12 @@ TSA-PINN/
 │   ├── train.py
 │   └── evaluate.py
 ├── notebooks/
+│   └── colab_runner.ipynb
 ├── configs/
-│   └── base.yaml
+│   └── standard.yaml
+│   └── tsa_frequency_0_1.yaml
+│   └── tsa_frequency_1_0.yaml
+│   └── tsa_frequency_3_0.yaml
 ├── outputs/
 ├── checkpoints/
 ├── requirements.txt
