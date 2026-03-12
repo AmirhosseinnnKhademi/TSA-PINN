@@ -26,11 +26,11 @@ Physics-Informed Neural Networks (PINNs) incorporate physical laws (PDEs) direct
 
 - slow convergence
 - spectral bias
-- difficulty capturing high-frequency dynamics
+- difficulty capturing high-sigma dynamics
 
 To address these challenges, we propose **TSA-PINN**, which introduces **trainable sinusoidal activations** into the neural network architecture.
 
-This allows the model to **adaptively learn relevant frequency components** of the solution.
+This allows the model to **adaptively learn relevant sigma components** of the solution.
 
 ---
 
@@ -48,10 +48,14 @@ TSA-PINN/
 │   └── colab_runner.ipynb
 ├── configs/
 │   └── standard.yaml
-│   └── tsa_frequency_0_1.yaml
-│   └── tsa_frequency_1_0.yaml
-│   └── tsa_frequency_3_0.yaml
+│   └── tsa_sigma_0_1.yaml
+│   └── tsa_sigma_1_0.yaml
+│   └── tsa_sigma_3_0.yaml
 ├── outputs/
+│   └── standard.yaml
+│   └── tsa_sigma_0_1.yaml
+│   └── tsa_sigma_1_0.yaml
+│   └── tsa_sigma_3_0.yaml
 ├── checkpoints/
 ├── requirements.txt
 ├── README.md
